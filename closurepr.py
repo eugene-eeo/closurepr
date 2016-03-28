@@ -7,6 +7,7 @@ IS_PY3 = sys.version_info[0] == 3
 def format_funcname(name, args, kwargs):
     varargs = ','.join(repr(v) for v in args)
     kwdargs = ','.join('%s=%r' % (k, kwargs[k]) for k in kwargs)
+    kwdargs = ',%s' % (kwdargs) if (varargs and kwdargs) else kwdargs
 
     return '%s(%s%s)' % (name, varargs, kwdargs)
 
