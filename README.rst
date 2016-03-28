@@ -1,8 +1,9 @@
 closurepr: debuggable closures
 ==============================
 
-Provides super lightweight wrappers around functions that return
-functions, to make functional programming in Python more friendly:
+Provides a super lightweight and magical wrapper around functions
+that return functions, to make functional programming in Python more
+friendly:
 
 .. code-block:: python
 
@@ -15,3 +16,9 @@ functions, to make functional programming in Python more friendly:
     '<function adder(1) at 0x...>'
 
 You don't strictly need it. But you want it.
+
+Previous literature:
+--------------------
+
+ - http://stackoverflow.com/questions/32284395/should-extra-layers-be-added-just-to-support-repr/32285982
+ - https://bugs.python.org/issue24056
