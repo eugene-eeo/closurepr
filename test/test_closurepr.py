@@ -19,7 +19,9 @@ class TestRichRepr(TestCase):
     def test_simple(self):
         add = adder(1, 2)
         assert rr(add) == 'adder(1,2)'
+        assert add(3) == 6
 
     def test_complex(self):
         add = adder(1, b=2)
         assert rr(add) == 'adder(1,b=2)'
+        assert add(3) == 6
