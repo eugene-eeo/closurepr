@@ -1,4 +1,5 @@
 import sys
+from functools import wraps
 
 
 IS_PY3 = sys.version_info[0] == 3
@@ -15,6 +16,7 @@ def format_funcname(name, args, kwargs):
 def rich_repr(fn):
     name = fn.__name__
 
+    @wraps(fn)
     def wrapper(*args, **kwargs):
         closure = fn(*args, **kwargs)
         string = format_funcname(name, args, kwargs)
