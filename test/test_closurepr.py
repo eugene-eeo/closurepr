@@ -25,3 +25,11 @@ class TestRichRepr(TestCase):
         add = adder(1, b=2)
         assert rr(add) == 'adder(1,b=2)'
         assert add(3) == 6
+
+    def test_kwargsonly(self):
+        add = adder(a=1, b=2)
+        assert rr(add) in [
+            'adder(a=1,b=2)',
+            'adder(b=2,a=1)',
+            ]
+        assert add(3) == 6
